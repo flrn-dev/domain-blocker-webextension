@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Domain Blocker",
+  "version": "1.0",
+  "description": "Entfernt Google-Suchergebnisse im Firefox-Browser mit konfigurierbaren Domains.",
+  "permissions": [
+    "storage",
+    "*://www.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.google.com/search*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_action": {
+    "default_title": "Domain Blocker",
+    "default_popup": "popup.html"
+  }
+}
